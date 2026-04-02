@@ -83,7 +83,7 @@ public partial class MainForm : Form
         {
             "A320" => new FlyByWireA320Definition(),
             "FENIX_A320CEO" => new FenixA320Definition(),
-            // Future aircraft will be added here
+            "C172" => new Cessna172Definition(),
             _ => new FlyByWireA320Definition() // Default to A320
         };
     }
@@ -1907,6 +1907,11 @@ public partial class MainForm : Form
         SwitchAircraft(new FenixA320Definition());
     }
 
+    private void Cessna172MenuItem_Click(object? sender, EventArgs e)
+    {
+        SwitchAircraft(new Cessna172Definition());
+    }
+
     private void SwitchAircraft(IAircraftDefinition newAircraft)
     {
         // Update the aircraft instance
@@ -2011,6 +2016,7 @@ public partial class MainForm : Form
         // Clear all menu item checks first
         flyByWireA320MenuItem.Checked = false;
         fenixA320MenuItem.Checked = false;
+        cessna172MenuItem.Checked = false;
 
         // Set the check on the current aircraft's menu item
         if (currentAircraft is FlyByWireA320Definition)
@@ -2020,6 +2026,10 @@ public partial class MainForm : Form
         else if (currentAircraft is FenixA320Definition)
         {
             fenixA320MenuItem.Checked = true;
+        }
+        else if (currentAircraft is Cessna172Definition)
+        {
+            cessna172MenuItem.Checked = true;
         }
     }
 
