@@ -95,7 +95,7 @@ public class Cessna172Definition : BaseAircraftDefinition
                 Name = "GPS WP DISTANCE",
                 DisplayName = "GPS Waypoint Distance",
                 Type = SimConnect.SimVarType.SimVar,
-                Units = "meters",
+                Units = "nautical miles",
                 UpdateFrequency = SimConnect.UpdateFrequency.OnRequest
             },
             ["NAV1_ACTIVE_FREQ"] = new SimConnect.SimVarDefinition
@@ -479,7 +479,7 @@ public class Cessna172Definition : BaseAircraftDefinition
                 ValueDescriptions = new Dictionary<double, string>
                 {
                     [0] = "Off",
-                    [1] = "All",
+                    [1] = "Both",
                     [2] = "Left",
                     [3] = "Right",
                     [4] = "Specific"
